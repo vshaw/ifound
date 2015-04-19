@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<!-- Soap 5:10pm: Commented out home page picture and added button. -->
+<html>
+
+<head>
+  <title>Campus Places</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="iFoundDesign.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <!-- HOME PAGE -->
+  <div data-role="page" id="home" data-theme="d">
+    <div data-role="header" data-position="inline">
+      <h1>iFound</h1>
+
+    </div>
+    <!-- /header -->
+    <div data-role="content" class="ui-content">
+
+      <ul data-role="listview">
+	{listItems}
+      </ul>
+    </div>
+    </br>
+    <div data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li> <a href="#home" data-icon="home">Home</a>
+            <li> <a href="#post" data-icon="edit">Post</a>
+              <li> <a href="#search" data-icon="search">Search</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- OBJECT PROFILE PAGES -->
+  <div data-role="page" id="profile1" data-theme="d">
+    <!-- /header -->
+    <div data-role="header" data-position="inline">
+      <a data-icon="back" data-rel="back" back-btn="true" class="back">Back</a>
+      <h1>iFound</h1>
+    </div>
+    <!--/body -->
+    <div data-role="content">
+      <a href="#finder" data-role="button" data-mini="true">Contact Finder</a>
+    </div>
+    <!--footer-->
+    <div data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li> <a href="#home" data-icon="home">Home</a>
+            <li> <a href="#post" data-icon="edit">Post</a>
+              <li> <a href="#search" data-icon="search">Search</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div data-role="page" id="finder" data-theme="d">
+    <div data-role="header" data-position="inline">
+      <a data-icon="back" data-rel="back" back-btn="true">Back</a>
+      <h1>iFound</h1>
+    </div>
+    <!-- /header -->
+    <div data-role="content">
+      <ul data-role="listview">
+        <li>
+          <a href="" class="ui-link-inherit">
+            <img src="email.png">
+            <h3 class="ui-li-heading">E-mail</h3>
+            <p class="ui-li-desc">abc@wellesley.edu</p>
+          </a>
+        </li>
+
+        <li>
+          <a href="" class="ui-link-inherit">
+            <img src="phone.png">
+            <h3 class="ui-li-heading">Phone</h3>
+            <p class="ui-li-desc">1-(234)-567-8910</p>
+          </a>
+        </li>
+    </div>
+    <div data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li> <a href="#home" data-icon="home">Home</a>
+            <li> <a href="#post" data-icon="edit">Post</a>
+              <li> <a href="#search" data-icon="search">Search</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <!-- POST PAGES -->
+  <div data-role="page" id="post" data-theme="d">
+    <div data-role="header" data-position="inline">
+      <h1>iFound</h1>
+    </div>
+    <!-- /header -->
+    <div data-role="content">
+
+    <form id="saveItemForm" action="saveItem.cgi" method="post"> 
+        <script language="JavaScript" type="text/javascript">
+        </script>
+        <div class="two-thirds column" id="main">
+          <fieldset>
+            <legend>What did you find?</legend>
+            </br>
+            <div class="image" id="photo">
+              <label for="photo">
+                <strong>Image of Object:</strong>
+              </label>
+              <input type="file" accept="image/*" id="capture" capture="camera" name="imgpath">
+            </div>
+            </br>
+            <label for="name">
+              <strong>Name:</strong>
+            </label>
+            <input type="text" id="name" name="name" />
+            </br>
+            <label for="descrip">
+              <strong>Description:</strong>
+            </label>
+            <input type="text" id="descrip" name="description" />
+          </fieldset>
+        </div>
+      <script src="utilities.js"></script>
+      <!-- <script src="submit-event.js"></script> -->
+      </br>
+      </br>
+      <a href="#post2" data-role="button" data-mini="true">Next</a>
+    </div>
+    </br>
+    <div data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li> <a href="#home" data-icon="home">Home</a>
+            <li> <a href="#post" data-icon="edit">Post</a>
+              <li> <a href="#search" data-icon="search">Search</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div data-role="page" id="post2" data-theme="d">
+    <div data-role="header" data-position="inline">
+      <a data-icon="back" data-rel="back" back-btn="true">Back</a>
+      <h1>iFound</h1>
+    </div>
+    <!-- /header -->
+
+    <div data-role="content">
+        <script language="JavaScript" type="text/javascript">
+        </script>
+        <div class="two-thirds column" id="main">
+          <fieldset>
+            <legend>What did you find?</legend>
+            </br>
+            <label for="location">
+              <strong>Location:</strong>
+            </label>
+            <input type="text" id="location" name="location" />
+            </br>
+            <label for="categorySelect">
+              <strong>Category:</strong>
+            </label>
+            <select id="categorySelect" name="category">
+              <option value="select">Select a Category</option>
+              <option value="clothing">Clothing and Accessories</option>
+              <option value="devices">Electronic Devices</option>
+              <option value="containers">Bottles and Containers</option>
+              <option value="clothing">Books and Homework</option>
+              <option value="select">Other</option>
+            </select>
+            </br>
+          </fieldset>
+        </div>
+      </br>
+
+      <a href="#post3" data-role="button" data-mini="true">Next</a>
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
+    </div>
+    <div data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li> <a href="#home" data-icon="home">Home</a>
+            <li> <a href="#post" data-icon="edit">Post</a>
+              <li> <a href="#search" data-icon="search">Search</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div data-role="page" id="post3" data-theme="d">
+    <div data-role="header" data-position="inline">
+      <a data-icon="back" data-rel="back" back-btn="true">Back</a>
+      <h1>iFound</h1>
+
+    </div>
+    <!-- /header -->
+    <div data-role="content">
+        <div class="two-thirds column" id="main">
+          <fieldset>
+            <legend>What is the best way to contact you?</legend>
+            </br>
+            <label for="email">
+              <strong>E-mail:</strong>
+            </label>
+            <input type="text" id="email" name="email" />
+            </br>
+            <label for="phone">
+              <strong>Phone number:</strong>
+            </label>
+            <input type="text" id="phone" name="phone" />
+          </fieldset>
+        </div>
+	<input type="hidden" id="contactInfo" name="contactInfo" value="" /> 
+        <input id="saveItemButton" type="submit" value="Submit"/ >
+      </form>
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
+      <script src="utilities.js"></script>
+      <!-- <script src="submit-event.js"></script> -->
+    </div>
+    </br>
+    <div data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li> <a href="#home" data-icon="home">Home</a>
+            <li> <a href="#post" data-icon="edit">Post</a>
+              <li> <a href="#search" data-icon="search">Search</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- </form> -->
+
+  <div data-role="page" id="post4" data-theme="d">
+    <div data-role="header" data-position="inline">
+      <a data-icon="back" data-rel="back" back-btn="true">Back</a>
+      <h1>iFound</h1>
+    </div>
+    <!-- /header -->
+    <div data-role="content">
+        <div class="two-thirds column" id="main">
+          <fieldset>
+            <legend>Your post is complete!</legend>
+            </br>
+            <div id=objectInfo>
+              <image for="object-name">Image:</label>
+              </br></br></br></br></br></br>
+              <label for="object-name">Object:</label>
+              </br>
+              <label for="object-description">Description:</label>
+              </br>
+              <label for="-object-location">Location Found:</label>
+              </br>
+              <label for="-object-location">Category:</label>
+              </br>
+            </div>
+            </br>
+          </fieldset>
+        </div>
+    </div>
+    <div data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li> <a href="#home" data-icon="home">Home</a>
+            <li> <a href="#post" data-icon="edit">Post</a>
+              <li> <a href="#search" data-icon="search">Search</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- SEARCH PAGE -->
+  <div data-role="page" id="search" data-theme="d">
+    <div data-role="header" data-position="inline">
+      <h1>iFound</h1>
+
+    </div>
+    <!-- /header -->
+    <div data-role="content">
+      <form id="contact" action="searchItem.cgi" method="post">
+        <div class="two-thirds column" id="main">
+          <fieldset>
+            <legend>What are you looking for?</legend>
+            <label for="keyword">By Keyword</label>
+            <input type="text" id="keyword" name="keyword" />
+            <label for="categorySelect">By Category</label>
+            <select id="categorySelect" name="categorySelect">
+              <option value="select">Select a Category</option>
+              <option value="clothing">Clothing and Accessories</option>
+              <option value="devices">Electronic Devices</option>
+              <option value="containers">Bottles and Containers</option>
+              <option value="clothing">Books and Homework</option>
+              <option value="select">Other</option>
+            </select>
+            </br>
+            <input id="submit" type="submit" value="Submit" />
+          </fieldset>
+        </div>
+      </form>
+    </div>
+    </br>
+    <div data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li> <a href="#home" data-icon="home">Home</a>
+            <li> <a href="#post" data-icon="edit">Post</a>
+              <li> <a href="#search" data-icon="search">Search</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
